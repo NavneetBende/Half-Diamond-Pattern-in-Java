@@ -1,0 +1,28 @@
+import java.util.Scanner;  
+public class HalfDiamondPattern {  
+    public static void main(String[] args) {  
+        // Create a Scanner object to read input from the user  
+        Scanner scanner = new Scanner(System.in);  
+        // Ask the user to enter the number of rows for the half diamond pattern  
+        System.out.print("Enter the number of rows: ");  
+        // Read the user input and store it in the variable "rows"  
+        int rows = scanner.nextInt();  
+        // Calculate the total number of columns for the pattern  
+        int totalColumns = rows * 2 - 1;  
+        // Calculate the row number at the middle of the pattern  
+        int midRow = rows;  
+        // Loop through each row of the pattern  
+        for (int i = 1; i <= totalColumns; i++) {  
+            // Calculate the absolute distance of the current row from the middle row  
+            int distance = Math.abs(midRow - i);  
+            // Calculate the number of asterisks in each row based on the distance from the middle row  
+            int asterisks = rows - distance;  
+            // Print the asterisks in the current row to create the left half of the diamond  
+            for (int j = 1; j <= asterisks; j++) {  
+                System.out.print("*");  
+            }  
+            // Move to the next line to create a new row in the pattern  
+            System.out.println();  
+        }  
+    }  
+}  
