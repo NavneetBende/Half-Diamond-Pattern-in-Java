@@ -1,0 +1,22 @@
+import java.util.Scanner;  
+public class HalfDiamondPattern {  
+    public static void main(String[] args) {  
+        Scanner scanner = new Scanner(System.in);  
+        System.out.print("Enter the number of rows: ");  
+        int rows = scanner.nextInt();  
+        int totalColumns = rows * 2 - 1;  
+        int midRow = rows;  
+        // Loop through each row  
+        for (int i = 1; i <= totalColumns; i++) {  
+            // Calculate the absolute distance from the middle row  
+            int distance = Math.abs(midRow - i);  
+            // Calculate the number of asterisks in each row  
+            int asterisks = rows - distance;  
+            // Print the asterisks in the current row  
+            for (int j = 1; j <= asterisks; j++) {  
+                System.out.print("*");  
+            }  
+            System.out.println();  
+        }  
+    }  
+}  
